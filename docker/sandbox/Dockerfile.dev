@@ -11,6 +11,7 @@ ARG USERNAME=${USERNAME:-developer}
 ARG COMMENT=${COMMENT:-Developer}
 ARG SHELL=${SHELL:-bash}
 ARG TIMEZONE=${TIMEZONE:-UTC}
+ARG JDK_VERSION=${JDK_VERSION:-24}
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -26,14 +27,29 @@ RUN apt-get -qq -y update && apt-get -qq -y upgrade \
         git \
         tzdata \
         bash \
+        maven \ 
     && ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
+
+# Intall Jenkins
+RUN wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key \
+    && echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+        https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+        /etc/apt/sources.list.d/jenkins.list > /dev/null \
+    && apt-get update \
+    && apt-get -qq -y install fontconfig jenkins
 
 # Create developer user
 RUN addgroup --gid ${GID} ${USERNAME} \
     && adduser --uid ${UID} --gid ${GID} --disabled-password --gecos "${COMMENT}" --shell ${SHELL} ${USERNAME} \
     && usermod -aG sudo ${USERNAME} \
     && echo "${USERNAME} ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers.d/casper
+
+# Install Oracle JDK
+RUN curl -o /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb https://download.oracle.com/java/${JDK_VERSION}/latest/jdk-${JDK_VERSION}_linux-x64_bin.deb \
+    && apt-get -qq -y install /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb \
+    && rm /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb
 
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}

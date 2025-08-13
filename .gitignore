@@ -1,3 +1,11 @@
+# Environment file
+.env*
+!.env.dist
+
+# Sandbox
+/src/sandbox/*
+!/src/sandbox/.gitkeep
+
 # Compiled class file
 *.class
 

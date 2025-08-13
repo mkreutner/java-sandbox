@@ -2,8 +2,8 @@
 # : Project specific recipes
 # +---------------------------------------------------------------------------
 # Build or rebuild services
-build:
-    @docker compose build 
+build *OPTIONS:
+    @docker compose build {{OPTIONS}}
 
 # Create and start containers (detached)
 up *OPTIONS:

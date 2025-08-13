@@ -3,8 +3,12 @@
 !.env.dist
 
 # Sandbox
-/src/sandbox/*
-!/src/sandbox/.gitkeep
+/src/sandbox/workspace/*
+!/src/sandbox/workspace/.gitkeep
+/src/sandbox/*.deb
+/src/sandbox/.sudo_as_admin_successful
+/src/sandbox/.vim/undodir/*
+!/src/sandbox/.vim/undodir/.gitkeep
 
 # Compiled class file
 *.class

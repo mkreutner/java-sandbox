@@ -18,7 +18,7 @@ services:
     tty: true
     stdin_open: true
     volumes:
-      - "./src/python:/home/${COMMON_USERNAME:-developer}"
+      - "./src/sandbox:/home/${COMMON_USERNAME:-developer}"
     user: "${COMMON_USERNAME:-developer}"
     working_dir: "/home/${COMMON_USERNAME:-developer}"
 

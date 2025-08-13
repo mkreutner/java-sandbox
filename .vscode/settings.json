@@ -1,0 +1,8 @@
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-24",
+            "path": "./data/usr/lib/jvm/jdk-24.0.2-oracle-x64",
+        },
+    ]
+}

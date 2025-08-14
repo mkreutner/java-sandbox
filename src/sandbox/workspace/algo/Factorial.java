@@ -8,6 +8,7 @@ public class Factorial
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a positif integer number: ");
         int n = scanner.nextInt();
+        scanner.close();
         if (n < 0) {
             System.out.println("Factorial is only define for positif integer number.");
         } else {

@@ -22,7 +22,7 @@ java Hello
 
 * Install extension: `Extension Pack for Java`: [https://github.com/Microsoft/vscode-java-pack](https://github.com/Microsoft/vscode-java-pack)
 
-* Setting up workspcage :
+* Setting up workspage: Open your local project settings in `[working_dir_full_path]/java-sandbox/.vscode/settings.json` and add settings bellow:
 
 ```json
 {

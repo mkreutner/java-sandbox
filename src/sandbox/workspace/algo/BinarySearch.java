@@ -12,7 +12,7 @@ public class BinarySearch
         // Retrieve playing data
         getData();
 
-        // Call sorting methode
+        // Call search methode
         binarySearch();
 
         // Display results
@@ -20,7 +20,7 @@ public class BinarySearch
     }
 
     /**
-     * Display table
+     * Display results
      */
     public static void displayResult()
     {

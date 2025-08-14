@@ -20,7 +20,7 @@ public class SequentialSearch
     }
 
     /**
-     * Display table
+     * Display results
      */
     public static void displayResult()
     {

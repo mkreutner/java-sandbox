@@ -13,6 +13,7 @@ public class SelectionSort {
         for (int i = 0; i < n; i++) {
             table[i] = scanner.nextInt();
         }
+        scanner.close();
 
         // Call selectionSort methode
         selectionSort(table);

@@ -1,3 +1,5 @@
+.vscode
+
 # Environment file
 .env*
 !.env.dist

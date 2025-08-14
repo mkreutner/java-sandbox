@@ -13,6 +13,7 @@ public class QuickSort
         for (int i = 0; i < n; i++) {
             table[i] = scanner.nextInt();
         }
+        scanner.close();
 
         // Call QuickSort methode
         quickSort(table, 0, n-1);

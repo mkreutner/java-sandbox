@@ -14,6 +14,7 @@ public class BubbleSort
         for (int i = 0; i < n; i++) {
             table[i] = scanner.nextInt();
         }
+        scanner.close();
 
         // Bubble sorting implementation
         for (int i = 0; i < n - 1; i++) {

@@ -13,6 +13,7 @@ public class MergeSort {
         for (int i = 0; i < n; i++) {
             table[i] = scanner.nextInt();
         }
+        scanner.close();
 
         // Call merge sort methode
         mergeSort(table, 0, n-1);

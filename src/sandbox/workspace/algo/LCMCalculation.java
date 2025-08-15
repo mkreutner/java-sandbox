@@ -65,6 +65,6 @@ public class LCMCalculation {
 
         findGCD();
 
-        lcm = (a * b) / gcd
+        lcm = (a * b) / gcd;
     }
 }

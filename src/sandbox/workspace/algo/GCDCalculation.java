@@ -43,12 +43,14 @@ public class GCDCalculation {
      */
     public static void findGCD()
     {
-        while (secondNumber != 0 ) {
-            int temp = secondNumber;
-            secondNumber = firstNumber % secondNumber;
-            firstNumber = temp;
+        int a = firstNumber;
+        int b = secondNumber;
+        while (b != 0 ) {
+            int temp = b;
+            b = a % b;
+            a = temp;
         }
 
-        gcd = firstNumber;
+        gcd = a;
     }
 }

@@ -61,7 +61,7 @@ public class SubstringSearch {
     }
 
     /**
-     * Compute the power of base
+     * Search all positions of sub string in the main string
      * 0                  19                                              67
      * le petit louis est le petit fils du vieux louis est il habite dans le bourg du haut village
      */

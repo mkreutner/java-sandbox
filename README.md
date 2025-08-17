@@ -40,3 +40,9 @@ java Hello
 }
 ```
 
+### Generate Spring project
+
+1. Visit [https://start.spring.io/](https://start.spring.io/) and complete form, then click on [Ctrl]+[Enter].
+2. Unzip archive.
+3. `mvn spring-boot:run` 
+

@@ -12,6 +12,7 @@
 !/src/sandbox/workspace/algo
 !/src/sandbox/workspace/algo/*.java
 !/src/sandbox/workspace/algo/*.md
+/src/sandbox/.m2
 /src/sandbox/*.deb
 /src/sandbox/.sudo_as_admin_successful
 /src/sandbox/.vim/undodir/*
@@ -20,6 +21,7 @@
 !/data/usr/lib/jvm
 /src/sandbox/.java
 /src/sandbox/.jenkins
+
 
 # Compiled class file
 *.class

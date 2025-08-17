@@ -18,6 +18,8 @@ services:
     restart: no # unless-stopped
     tty: true
     stdin_open: true
+    ports:
+      - 8080:8080
     volumes:
       - "./src/sandbox:/home/${COMMON_USERNAME:-developer}"
       - "sndbx_sandbox_jvm:/usr/lib/jvm/"

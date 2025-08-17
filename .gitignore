@@ -4,23 +4,6 @@
 .env*
 !.env.dist
 
-# Sandbox
-/src/sandbox/workspace/*
-!/src/sandbox/workspace/.gitkeep
-!/src/sandbox/workspace/*.java
-!/src/sandbox/workspace/*.md
-!/src/sandbox/workspace/algo
-!/src/sandbox/workspace/algo/*.java
-!/src/sandbox/workspace/algo/*.md
-/src/sandbox/.m2
-/src/sandbox/*.deb
-/src/sandbox/.sudo_as_admin_successful
-/src/sandbox/.vim/undodir/*
-!/src/sandbox/.vim/undodir/.gitkeep
-/data/usr/lib/jvm/*
-!/data/usr/lib/jvm
-/src/sandbox/.java
-/src/sandbox/.jenkins
 
 
 # Compiled class file
@@ -47,3 +30,25 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+# Sandbox
+/src/sandbox/workspace/*
+!/src/sandbox/workspace/.gitkeep
+!/src/sandbox/workspace/*.java
+!/src/sandbox/workspace/*.md
+!/src/sandbox/workspace/algo
+!/src/sandbox/workspace/algo/*.java
+!/src/sandbox/workspace/algo/*.md
+!/src/sandbox/workspace/api-books
+/src/sandbox/workspace/api-books/.mvn
+!/src/sandbox/workspace/api-books.zip
+!/src/sandbox/workspace/api-books/*.md
+/src/sandbox/.m2
+/src/sandbox/*.deb
+/src/sandbox/.sudo_as_admin_successful
+/src/sandbox/.vim/undodir/*
+!/src/sandbox/.vim/undodir/.gitkeep
+/data/usr/lib/jvm/*
+!/data/usr/lib/jvm
+/src/sandbox/.java
+/src/sandbox/.jenkins

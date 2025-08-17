@@ -8,6 +8,7 @@
 /src/sandbox/workspace/*
 !/src/sandbox/workspace/.gitkeep
 !/src/sandbox/workspace/*.java
+!/src/sandbox/workspace/*.md
 !/src/sandbox/workspace/algo
 !/src/sandbox/workspace/algo/*.java
 !/src/sandbox/workspace/algo/*.md

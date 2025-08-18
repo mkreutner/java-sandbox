@@ -48,3 +48,6 @@ Visit [https://spring.io/guides/gs/spring-boot](https://spring.io/guides/gs/spri
 2. Unzip archive.
 3. `mvn spring-boot:run` 
 
+### Play more
+
+- [https://leetcode.com/](https://leetcode.com/)

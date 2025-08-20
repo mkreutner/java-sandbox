@@ -40,6 +40,7 @@ replay_pid*
 !/src/sandbox/workspace/algo/*.java
 !/src/sandbox/workspace/algo/*.md
 !/src/sandbox/workspace/api-books
+!/src/sandbox/workspace/dyma
 /src/sandbox/workspace/api-books/.mvn
 !/src/sandbox/workspace/api-books.zip
 !/src/sandbox/workspace/api-books/*.md

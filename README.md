@@ -4,6 +4,10 @@
 
 Java Sandbox aims to provide a customizable container to develop Java project
 
+## After clone
+
+Just run `just setup`
+
 ## Ticks
 
 ### Test Java:

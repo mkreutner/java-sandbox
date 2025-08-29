@@ -65,4 +65,5 @@ history-clean CONTAINER:
     sed -i "s/UID=.*/UID=$uid/" .env
     sed -i "s/GID=.*/GID=$gid/" .env
 
+    mkdir -p data/usr/lib/jvm
     touch data/tmp/.bash_history

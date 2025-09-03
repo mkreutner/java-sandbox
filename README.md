@@ -14,9 +14,16 @@ java Hello
 # Expected output : Hello, World!
 ```
 
-### Very cool emoji and ascii art resources:
+### Very cool resources:
 
-[https://emojicombos.com/](https://emojicombos.com/)
+#### Debugger
+
+* [Debugging Java on the Command Line](https://foojay.io/today/jdb/)
+* [The jdb Command](https://docs.oracle.com/en/java/javase/17/docs/specs/man/jdb.html)
+
+#### Ascii Art and Emoji
+
+* [https://emojicombos.com/](https://emojicombos.com/)
 
 ### Settings your Visual Studio
 

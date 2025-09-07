@@ -58,3 +58,16 @@ Visit [https://spring.io/guides/gs/spring-boot](https://spring.io/guides/gs/spri
 ### Play more
 
 - [https://leetcode.com/](https://leetcode.com/)
+
+### Dyma
+
+#### Chapter 05
+
+In order to compile run following commands:
+
+```bash
+mkdir -p ./build
+javac -d build Color.java Origin.java Fruit.java Main.java
+jar cfe ./build/Build.jar sandbox.workspace.dyma.Chap05.Main -C ./build sandbox
+java -jar ./build/Build.jar
+```

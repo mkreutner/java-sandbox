@@ -7,8 +7,10 @@ import sandbox.workspace.dyma.Chap05.Origin;
 public class Main {
 
     public static void main(String[] args) {
-        Fruit fruit = new Fruit("Strawberry", Color.RED, Origin.FRA);
+        Fruit fruit = new Fruit("Strawberries", Color.RED, Origin.FRA);
+        Fruit fruit2 = new Fruit("Apples");
 
         System.out.println(fruit.toString());
+        System.out.println(fruit2.toString());
     }
 }

@@ -4,10 +4,9 @@
 .env*
 !.env.dist
 
-
-
 # Compiled class file
 *.class
+*docs
 
 # Log file
 *.log

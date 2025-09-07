@@ -10,6 +10,12 @@ public class ParamsAndArgs {
        System.out.println(concat("Little", "Thumb", "sows", "white", "pebbles", "to", "be able to", "find", "his", "way"));
     }
 
+    /**
+     * Sums two integers given in paramater and returns the resultat 
+     * @param a First integer to add
+     * @param b Second intger to add
+     * @return int as result sum of parameters
+     */
     private static int addition(int a, int b) 
     {
         return a + b;

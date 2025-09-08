@@ -24,4 +24,12 @@ public class Fruit {
     public String toString() {
         return String.format("Name: %s,\nColor: %s,\nOrigin: %s", name, color, origin);
     }
+
+    /**
+     * Return true if fruit is produced in Fance
+     * @return boolean
+     */
+    public boolean isFrench() {
+        return this.origin == Origin.FRA;
+    }
 }

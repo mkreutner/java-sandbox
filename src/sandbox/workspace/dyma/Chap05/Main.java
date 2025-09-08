@@ -12,5 +12,8 @@ public class Main {
 
         System.out.println(fruit.toString());
         System.out.println(fruit2.toString());
+
+        System.out.println(fruit.isFrench());
+        System.out.println(fruit2.isFrench());
     }
 }

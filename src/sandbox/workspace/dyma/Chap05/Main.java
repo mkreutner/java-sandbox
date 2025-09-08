@@ -15,5 +15,12 @@ public class Main {
 
         System.out.println(fruit.isFrench());
         System.out.println(fruit2.isFrench());
+
+        System.out.println(fruit.getName());
+        fruit.setName("Cherries");
+        System.out.println(fruit.getName());
+        System.out.println(fruit.toString());
+
+        
     }
 }

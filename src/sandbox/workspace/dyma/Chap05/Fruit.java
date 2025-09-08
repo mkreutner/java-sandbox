@@ -21,6 +21,15 @@ public class Fruit {
         this.origin = Origin.UNKNOWN;
     }
 
+    public String getName() {
+        return this.name;
+    }
+
+    public Fruit setName(String name) {
+        this.name = name;
+        return this;
+    }
+
     public String toString() {
         return String.format("Name: %s,\nColor: %s,\nOrigin: %s", name, color, origin);
     }

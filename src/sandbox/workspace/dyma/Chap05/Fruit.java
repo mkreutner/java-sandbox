@@ -30,6 +30,24 @@ public class Fruit {
         return this;
     }
 
+    public String getColor() {
+        return this.color;
+    }
+
+    public Fruit setColor(String color) {
+        this.color = color;
+        return this;
+    }
+
+    public String getOrigin() {
+        return this.origin;
+    }
+
+    public Fruit setOrigin(String origin) {
+        this.origin = origin;
+        return this;
+    }
+
     public String toString() {
         return String.format("Name: %s,\nColor: %s,\nOrigin: %s", name, color, origin);
     }

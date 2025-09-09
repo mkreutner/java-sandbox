@@ -48,6 +48,36 @@ public class Fruit {
         return this;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (obj.getClass() != this.getClass()) {
+            return false;
+        }
+        Fruit f = (Fruit) obj;
+        if (!f.getName().equals(this.getName())
+            || !f.getColor().equals(this.getColor())
+            || !f.getOrigin().equals(this.getOrigin())
+        ) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (color != null ? color.hashCode() : 0);
+        result = 31 * result + (origin != null ? origin.hashCode() : 0);
+        return result;
+    }
+
+    @Override
     public String toString() {
         return String.format("Name: %s,\nColor: %s,\nOrigin: %s", name, color, origin);
     }

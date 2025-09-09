@@ -8,7 +8,9 @@ public class Main {
 
     public static void main(String[] args) {
         Fruit fruit = new Fruit("Strawberries", Color.RED, Origin.FRA);
-        Fruit fruit2 = new Fruit("Apples");
+        Fruit fruit2 = new Fruit("Strawberries", Color.RED, Origin.FRA);
+        Fruit fruit3 = new Fruit("Strawberries", Color.RED, Origin.FRA);
+        Fruit fruit4 = new Fruit("Apples");
         Fruit banana = new Banana(Origin.BEL)
             .setName("Big Banana");
 
@@ -24,6 +26,9 @@ public class Main {
         System.out.println(fruit.toString());
 
         System.out.println(banana.toString());
+
+        System.out.println(fruit2 == fruit3);
+        System.out.println(fruit2.equals(fruit3));
         
     }
 }

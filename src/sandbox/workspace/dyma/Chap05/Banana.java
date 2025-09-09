@@ -9,4 +9,10 @@ public class Banana extends Fruit {
     public Banana(String origin) {
         super("Banana", Color.YELLOW, origin);
     }
+
+    @Override
+    public Fruit setName(String name) {
+        name = new StringBuilder(name).reverse().toString();
+        return super.setName(name);
+    }
 }

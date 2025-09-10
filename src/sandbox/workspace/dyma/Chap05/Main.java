@@ -5,6 +5,7 @@ import sandbox.workspace.dyma.Chap05.Vegetable;
 import sandbox.workspace.dyma.Chap05.Color;
 import sandbox.workspace.dyma.Chap05.Origin;
 import sandbox.workspace.dyma.Chap05.Car;
+import sandbox.workspace.dyma.Chap05.Crazy;
 
 public class Main {
 
@@ -48,6 +49,20 @@ public class Main {
 
         car01.fullOfGaz();
     }
+
+    public static void CrazyInternal() {
+        var crazy = new Crazy();
+
+        System.out.println(crazy.getInnerCrazy());
+
+        crazy.displayWithCallback(new Callback() {
+            // Anonymous class
+            @Override
+            public void execute() {
+                System.out.println("Dynamic callback from anonymous Class");
+            }
+        });
+    }
     
     public static void main(String[] args) {
 
@@ -55,6 +70,9 @@ public class Main {
         // FruitsAndVegetables();
 
         // Playing with vehicules
-        DrivingSchool();
+        // DrivingSchool();
+
+        // Crazy Internal
+        CrazyInternal();
     }
 }

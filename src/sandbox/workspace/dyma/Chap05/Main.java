@@ -1,12 +1,14 @@
 package sandbox.workspace.dyma.Chap05;
 
 import sandbox.workspace.dyma.Chap05.Fruit;
+import sandbox.workspace.dyma.Chap05.Vegetable;
 import sandbox.workspace.dyma.Chap05.Color;
 import sandbox.workspace.dyma.Chap05.Origin;
+import sandbox.workspace.dyma.Chap05.Car;
 
 public class Main {
 
-    public static void main(String[] args) {
+    private static void FruitsAndVegetables() {
         Fruit fruit = new Fruit("Strawberries", Color.RED, Origin.FRA);
         Fruit fruit2 = new Fruit("Strawberries", Color.RED, Origin.FRA);
         Fruit fruit3 = new Fruit("Strawberries", Color.RED, Origin.FRA);
@@ -29,6 +31,30 @@ public class Main {
 
         System.out.println(fruit2 == fruit3);
         System.out.println(fruit2.equals(fruit3));
-        
+
+        Vegetable veg01 = new Vegetable("Potato", "Brown", "Belgium");
+        Vegetable veg02 = new Vegetable("Potato", "Brown", "Belgium");
+        Vegetable veg03 = new Vegetable("Zucchini", "Green", "France");
+        Vegetable veg04 = new Vegetable("Eggplant", "Dark Purple", "Italy");
+
+        System.out.println(veg01.equals(veg02));
+        System.out.println(veg03.color());
+        System.out.println(veg04.hashCode());
+        System.out.println(veg04.toString());
+    }
+
+    public static void DrivingSchool() {
+        var car01 = new Car();
+
+        car01.fullOfGaz();
+    }
+    
+    public static void main(String[] args) {
+
+        // Fruits And Vegetables
+        // FruitsAndVegetables();
+
+        // Playing with vehicules
+        DrivingSchool();
     }
 }

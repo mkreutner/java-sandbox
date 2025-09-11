@@ -71,3 +71,12 @@ javac -d build Color.java Origin.java Fruit.java Main.java
 jar cfe ./build/Build.jar sandbox.workspace.dyma.Chap05.Main -C ./build sandbox
 java -jar ./build/Build.jar
 ```
+
+Or
+
+```bash
+mkdir -p ./build
+javac -d build *.java
+jar cfe ./build/Build.jar sandbox.workspace.dyma.Chap05.Main -C ./build sandbox
+java -jar ./build/Build.jar
+```

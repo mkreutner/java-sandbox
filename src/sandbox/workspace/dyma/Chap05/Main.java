@@ -6,6 +6,8 @@ import sandbox.workspace.dyma.Chap05.Color;
 import sandbox.workspace.dyma.Chap05.Origin;
 import sandbox.workspace.dyma.Chap05.Car;
 import sandbox.workspace.dyma.Chap05.Crazy;
+import sandbox.workspace.dyma.Chap05.Day;
+import sandbox.workspace.dyma.Chap05.CustomDate;
 
 public class Main {
 
@@ -63,6 +65,22 @@ public class Main {
             }
         });
     }
+
+    public static void PlayingWithEnum() {
+
+        Day day = Day.Monday;
+
+        if (day == Day.Thursday) {
+            System.out.println("It's Thursday");
+        } else {
+            System.out.println("It's not Thursday");
+        }
+
+        CustomDate cd = new CustomDate(Day.Friday)
+            .setDay(Day.Wednesday);
+        System.out.println(cd.getDay());
+
+    }
     
     public static void main(String[] args) {
 
@@ -73,6 +91,9 @@ public class Main {
         // DrivingSchool();
 
         // Crazy Internal
-        CrazyInternal();
+        // CrazyInternal();
+
+        // Palying with enum
+        PlayingWithEnum();
     }
 }

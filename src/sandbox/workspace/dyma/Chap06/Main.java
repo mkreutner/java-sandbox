@@ -1,6 +1,9 @@
 package sandbox.workspace.dyma.Chap06;
 
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.TreeSet;
 
 public class Main {
 
@@ -87,6 +90,93 @@ public class Main {
         }
     }
 
+    private static void playingWithSet() {
+
+        var set = new HashSet<String>();
+
+        set.add("Victor");
+        set.add("Mikael");
+        set.add("Mikael");
+        set.add("Tom");
+        set.add(null);
+        set.add("Tom");
+        set.add("TomA");
+        set.add("TomB");
+        set.add(null);
+
+        System.out.println(set);
+
+        if (set.contains("TomA")) {
+            System.out.println("TomA exists in set");
+        } else {
+            System.out.println("TomA doen't exist in set");
+        }
+
+        if (set.contains("TomC")) {
+            System.out.println("TomC exists in set");
+        } else {
+            System.out.println("TomC doen't exist in set");
+        }
+
+        var treeSet = new TreeSet<String>();
+        treeSet.add("Victor");
+        treeSet.add("Mikael");
+        treeSet.add("Mikael");
+        treeSet.add("Tom");
+        // treeSet.add(null); TreeSet doen't accept null value
+        treeSet.add("Tom");
+        treeSet.add("TomA");
+        treeSet.add("TomB");
+        // treeSet.add(null); TreeSet doen't accept null value
+        
+        System.out.println(treeSet);
+
+        if (treeSet.contains("TomA")) {
+            System.out.println("TomA exists in treeSet");
+        } else {
+            System.out.println("TomA doen't exist in treeSet");
+        }
+
+        if (treeSet.contains("TomC")) {
+            System.out.println("TomC exists in treeSet");
+        } else {
+            System.out.println("TomC doen't exist in treeSet");
+        }
+
+        var treeSet2 = new TreeSet<String>(new Comparator<String>() {
+            @Override
+            public int compare(String o1, String o2) {
+                return o2.compareTo(o1);
+            }
+            
+        });
+        treeSet2.add("Victor");
+        treeSet2.add("Mikael");
+        treeSet2.add("Mikael");
+        treeSet2.add("Tom");
+        treeSet2.add("Tom");
+        treeSet2.add("TomA");
+        treeSet2.add("TomB");
+        
+        System.out.println(treeSet2);
+
+        if (treeSet2.contains("TomA")) {
+            System.out.println("TomA exists in treeSet");
+        } else {
+            System.out.println("TomA doen't exist in treeSet");
+        }
+
+        if (treeSet2.contains("TomC")) {
+            System.out.println("TomC exists in treeSet");
+        } else {
+            System.out.println("TomC doen't exist in treeSet");
+        }
+
+
+
+
+    }
+
     public static void main(String[] args) {
         System.out.println(">>> Chapter 06: Tables and collections");
 
@@ -94,6 +184,9 @@ public class Main {
         // playingWithArray();
 
         // Playing with list
-        playingWithList();
+        // playingWithList();
+
+        // Playing with Set
+        playingWithSet();
     }
 }

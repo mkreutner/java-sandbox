@@ -80,3 +80,17 @@ javac -d build *.java
 jar cfe ./build/Build.jar sandbox.workspace.dyma.Chap05.Main -C ./build sandbox
 java -jar ./build/Build.jar
 ```
+
+### Chapter 07
+
+I use maven, to build project: 
+
+```bash
+mvn package
+```
+
+then to run the project
+
+```bash
+java -cp target/chap07-1.0-SNAPSHOT.jar com.mkdevs.Main
+```

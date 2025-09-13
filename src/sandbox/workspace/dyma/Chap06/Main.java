@@ -308,6 +308,21 @@ public class Main {
     }
     //#endregion
 
+    //#region hash & hashCode
+    private static void playingWithHash() {
+        var fruitsSet = new HashSet<Fruit>();
+
+        fruitsSet.add(new Fruit("Strawberry", "Red", "France"));
+        fruitsSet.add(new Fruit("Banana", "Yellow", "Madagascar"));
+        fruitsSet.add(new Fruit("Mango", "Green", "Guadeloupe"));
+        fruitsSet.add(new Fruit("Green Kiwi", "Green", "France"));
+        fruitsSet.add(new Fruit("Pear", "Yellow", "France"));
+
+        var isInSet = fruitsSet.contains(new Fruit("Strawberry", "Red", "France"));
+
+        System.out.println(isInSet);
+    }
+
     public static void main(String[] args) {
         System.out.println(">>> Chapter 06: Tables and collections");
 
@@ -321,6 +336,9 @@ public class Main {
         // playingWithSet();
 
         // Playing with Map
-        playingWithMap();
+        // playingWithMap();
+
+        // Playing with Hash
+        playingWithHash();
     }
 }

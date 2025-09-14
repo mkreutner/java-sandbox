@@ -45,6 +45,35 @@ public class App
 
         return wordsList.get(random.nextInt(linesCounter));
     }
+
+    private static char scanLetter() {
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        if (input.length() != 1) {
+            System.out.println("Please enter a single letter");
+            return scanLetter();
+        }
+        return input.charAt(0);
+    }
+
+    private static boolean playAgain() {
+        System.out.println("Do you want to play again? (y/n)");
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        if (input.length() != 1) {
+            System.out.println("Please enter y or n");
+            return playAgain();
+        }
+        char answer = input.charAt(0);
+        if (answer == 'y' || answer == 'Y') {
+            return true;
+        } else if (answer == 'n' || answer == 'N') {
+            return false;
+        } else {
+            System.out.println("Please enter y or n");
+            return playAgain();
+        }
+    }
     //#endregion
 
     /**
@@ -63,13 +92,7 @@ public class App
         while (true) {
             System.out.println(hangman.getStatus());
             System.out.println("Please enter a letter:");
-            Scanner scanner = new Scanner(System.in);
-            String input = scanner.nextLine();
-            if (input.length() != 1) {
-                System.out.println("Please enter a single letter");
-                continue;
-            }
-            char letter = input.charAt(0);
+            char letter = scanLetter();
             if (hangman.tryLetter(letter) == true) {
                 System.out.println(String.format("Good! The letter %c is in the word to find", letter));
             } else {
@@ -78,11 +101,25 @@ public class App
             }
             if (hangman.isWin()) {
                 System.out.println(String.format("Congratulations! You found the word: %s", hangman.getWordToFind()));
-                break;
+                if (playAgain()) {
+                    wordToFind = peekSentenceToGuess();
+                    hangman.setWordToFind(wordToFind);
+                    hangman.setNumberOfLives(hangman.MAX_LIVES);
+                    System.out.println(String.format("The word to find is: %s", wordToFind));
+                } else {
+                    break;
+                }
             }
             if (hangman.isGameOver()) {
                 System.out.println(String.format("Game over! You lost. The word was: %s", hangman.getWordToFind()));
-                break;
+                if (playAgain()) {
+                    wordToFind = peekSentenceToGuess();
+                    hangman.setWordToFind(wordToFind);
+                    hangman.setNumberOfLives(hangman.MAX_LIVES);
+                    System.out.println(String.format("The word to find is: %s", wordToFind));
+                } else {
+                    break;
+                } 
             }
         }
     }

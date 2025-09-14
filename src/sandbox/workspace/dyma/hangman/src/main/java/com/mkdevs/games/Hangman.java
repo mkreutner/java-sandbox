@@ -25,6 +25,12 @@ public class Hangman {
         return wordToFind;
     }
 
+    public Hangman setWordToFind(String wordToFind) {
+        this.wordToFind = wordToFind;
+        this.blankWord = "_".repeat(wordToFind.length());
+        return this;
+    }
+
     public int getNumberOfLives() {
         return numberOfLives;
     }
@@ -63,5 +69,4 @@ public class Hangman {
     public boolean isWin() {
         return blankWord.equals(wordToFind);
     }    
-
 }

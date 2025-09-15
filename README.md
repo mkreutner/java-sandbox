@@ -98,3 +98,23 @@ then to run the project
 ```bash
 java -cp target/chap07-1.0-SNAPSHOT.jar com.mkdevs.Main
 ```
+
+#### Tic Tac Toe Game
+
+**Generate project**
+
+```bash
+mvn archetype:generate -DgroupId=com.mkdevs.dyma -DartifactId=tic-tac-toe -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.5 -DinteractiveMode=flase
+```
+
+**Build**
+
+```bash
+mvn package
+```
+
+**Execute**
+
+```bash
+java -cp target/tic-tac-toe-1.0-SNAPSHOT.jar com.mkdev.dyma.App
+```

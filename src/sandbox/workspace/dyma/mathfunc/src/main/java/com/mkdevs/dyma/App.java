@@ -79,9 +79,34 @@ public class App {
         System.out.println("To Byte Array: " + java.util.Arrays.toString(bigInt1.toByteArray()));
     }
 
+    public static void mainBigDecimalFunc() {
+        var bigDec1 = new java.math.BigDecimal("12345.6789012345678901234567890");
+        var bigDec2 = new java.math.BigDecimal("98765.4321098765432109876543210");
+
+        System.out.println("Big Decimal 1: " + bigDec1);
+        System.out.println("Big Decimal 2: " + bigDec2);
+
+        System.out.println("Sum: " + bigDec1.add(bigDec2));
+        System.out.println("Difference: " + bigDec1.subtract(bigDec2));
+        System.out.println("Product: " + bigDec1.multiply(bigDec2));
+        System.out.println("Quotient: " + bigDec1.divide(bigDec2, java.math.RoundingMode.HALF_UP));
+        System.out.println("Remainder: " + bigDec1.remainder(bigDec2));
+        System.out.println("Power: " + bigDec1.pow(2));
+        System.out.println("Set Scale: " + bigDec1.setScale(10, java.math.RoundingMode.HALF_UP));
+        System.out.println("Move Point Left: " + bigDec1.movePointLeft(2));
+        System.out.println("Move Point Right: " + bigDec1.movePointRight(2));
+        System.out.println("Strip Trailing Zeros: " + bigDec1.stripTrailingZeros());
+        System.out.println("To Plain String: " + bigDec1.toPlainString());
+        System.out.println("To Engineering String: " + bigDec1.toEngineeringString());
+        System.out.println("To Big Integer: " + bigDec1.toBigInteger());    
+        System.out.println("To Double: " + bigDec1.doubleValue());
+        System.out.println("To Float: " + bigDec1.floatValue());
+    }
+
     public static void main(String[] args) {
         // mainBasicMathFunc();
         // mainLangMathFunc();
-        mainBigIntegerFunc();
+        // mainBigIntegerFunc();
+        mainBigDecimalFunc();
     }
 }

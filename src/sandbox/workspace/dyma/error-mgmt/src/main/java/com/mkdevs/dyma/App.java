@@ -36,6 +36,7 @@ public class App {
         System.out.print("Enter something: ");
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
+        scanner.close();
         if (input.isBlank()) {
             throw new BlankInputException();
         }

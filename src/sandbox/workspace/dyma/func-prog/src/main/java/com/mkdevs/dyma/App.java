@@ -27,13 +27,7 @@ public class App {
             (message) -> System.out.println(">>> " + message)
         );
     }
-
-    public static void main(String[] args) {
-        introduction();
-        playWithLists();
-        playWithFunctinalInterfacesAndLambdas();
-    }
-
+    
     @FunctionalInterface
     interface LoggerCallback {
         void log(String message);
@@ -45,4 +39,30 @@ public class App {
             loggerCallback.log("John Doe is dead...");
         }
     }
+
+    public static void playWithStreamAPI() {
+        var towns = java.util.List.of("Paris", "London", "New York", "Tokyo", "Berlin");
+        long countWithO = towns.stream()
+            .filter(town -> town.contains("o") || town.contains("O"))
+            .count();
+        System.out.println("Number of towns containing 'o' or 'O': " + countWithO);
+
+        var sortedTowns = towns.stream()
+            .sorted()
+            .collect(java.util.stream.Collectors.toList());
+        System.out.println("Sorted towns: " + sortedTowns);
+
+        var townLengths = towns.stream()
+            .map(String::length)
+            .collect(java.util.stream.Collectors.toList());
+        System.out.println("Town name lengths: " + townLengths);
+    }
+
+    public static void main(String[] args) {
+        introduction();
+        //playWithLists();
+        //playWithFunctinalInterfacesAndLambdas();
+        playWithStreamAPI();
+    }
+
 }

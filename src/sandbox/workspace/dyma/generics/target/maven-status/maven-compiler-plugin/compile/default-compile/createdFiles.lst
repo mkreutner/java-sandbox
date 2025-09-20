@@ -1,1 +1,7 @@
+main/java/com/mkdevs/dyma/Person.class
+main/java/com/mkdevs/dyma/Adult.class
 com/mkdevs/dyma/App.class
+main/java/com/mkdevs/dyma/IList.class
+main/java/com/mkdevs/dyma/ImmutableList.class
+main/java/com/mkdevs/dyma/Child.class
+main/java/com/mkdevs/dyma/StaticGeneric.class

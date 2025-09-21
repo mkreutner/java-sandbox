@@ -5,9 +5,11 @@ import main.java.com.mkdevs.dyma.StaticGeneric;
 import main.java.com.mkdevs.dyma.Adult;
 import main.java.com.mkdevs.dyma.Child;
 import main.java.com.mkdevs.dyma.Person;
+import main.java.com.mkdevs.dyma.Model;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import java.util.Arrays;
 
 /**
  * Chapter 14 - Introduction to Generics
@@ -94,6 +96,29 @@ public class App {
         persons3.stream().forEach(person -> System.out.println(person.getName() + " is " + person.getAge() + " years old."));
     
     }
+    
+    public static void annotationsAndIntrospectionInGenerics() {
+        System.out.println("Annotations and Introspectionin Generics example!");
+        System.out.println("=========================================================");
+        
+        var personClass = Person.class;
+        var modelAnnotation = Optional.ofNullable(personClass.getAnnotation(Model.class));
+        modelAnnotation.ifPresentOrElse(annotation -> {
+            System.out.println("Model Annotation:");
+            System.out.println(" Value: " + annotation.value());
+            System.out.println(" Author: " + annotation.author());
+            System.out.println(" Date: " + annotation.date());
+            System.out.println(" Version: " + annotation.version());
+        }, () -> {
+            System.out.println("No Model Annotation found.");
+        });
+        // System.out.println("Class: " + personClass.getSimpleName());
+        // System.out.println("Package: " + personClass.getPackageName());
+        // System.out.println("Declared Methods: " + Arrays.toString(personClass.getDeclaredMethods()));
+        // System.out.println("Declared Fields: " + Arrays.toString(personClass.getDeclaredFields()));
+        // System.out.println("Declared Constructors: " + Arrays.toString(personClass.getDeclaredConstructors()));
+        System.out.println("");
+    }
 
     public static void main(String[] args) {
         // introduction();
@@ -101,6 +126,9 @@ public class App {
         // optionalClassExample();
         // firstGenericClassExample();
         // divingDeepIntoOptionals();
-        inheritanceAndGenerics();
+        // inheritanceAndGenerics();
+        annotationsAndIntrospectionInGenerics();
+        
     }
+
 }

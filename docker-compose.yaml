@@ -13,6 +13,7 @@ services:
         - SHELL=${COMMON_SHELL:-sh}
         - TIMEZONE=${COMMON_TIMEZONE:-UTC}
         - JDK_VERSION=${BASE_JDK_VERSION:-24}
+        - GRADLE_VERSION=${BASE_GRADLE_VERSION:-9.1.0}
     container_name: sandbox
     hostname: sandbox
     restart: no # unless-stopped
@@ -60,7 +61,7 @@ services:
         - IMG_NAME=${MYSQL_IMG_NAME}
         - IMG_TAG=${MYSQL_IMG_TAG}
         - TIMEZONE=${COMMON_TIMEZONE:-UTC}
-    container_name: sdbx_mysql
+    container_name: sndbx_mysql
     hostname: sndbx_mysql
     restart: no # unless-stopped
     environment:

@@ -12,6 +12,7 @@ ARG COMMENT=${COMMENT:-Developer}
 ARG SHELL=${SHELL:-bash}
 ARG TIMEZONE=${TIMEZONE:-UTC}
 ARG JDK_VERSION=${JDK_VERSION:-24}
+ARG GRADLE_VERSION=${GRADLE_VERSION:-9.1.0}
 
 ARG DEBIAN_FRONTEND=noninteractive
 
@@ -28,7 +29,6 @@ RUN apt-get -qq -y update && apt-get -qq -y upgrade \
         tzdata \
         bash \
         maven \ 
-        gradle \
         zip \
     && ln -fs /usr/share/zoneinfo/${TIMEZONE} /etc/localtime \
     && dpkg-reconfigure -f noninteractive tzdata
@@ -51,7 +51,20 @@ RUN addgroup --gid ${GID} ${USERNAME} \
 # Install Oracle JDK
 RUN curl -o /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb https://download.oracle.com/java/${JDK_VERSION}/latest/jdk-${JDK_VERSION}_linux-x64_bin.deb \
     && apt-get -qq -y install /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb \
-    && rm /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb
+    && rm /tmp/jdk-${JDK_VERSION}_linux-x64_bin.deb \
+    && ln -s $(dirname $(dirname $(readlink -f $(which java)))) /usr/lib/jvm/jdk-${JDK_VERSION}
 
+# Install Gradle
+RUN wget https://services.gradle.org/distributions/gradle-${GRADLE_VERSION}-bin.zip -O /tmp/gradle-${GRADLE_VERSION}-bin.zip \
+    && unzip -d /opt/gradle /tmp/gradle-${GRADLE_VERSION}-bin.zip \
+    && rm /tmp/gradle-${GRADLE_VERSION}-bin.zip
+
+# Set environment variables
+ENV GRADLE_HOME=/opt/gradle/gradle-${GRADLE_VERSION}
+ENV PATH=${PATH}:${GRADLE_HOME}/bin 
+ENV JAVA_HOME=/usr/lib/jvm/jdk-${JDK_VERSION}
+ENV PATH=${PATH}:${JAVA_HOME}/bin
+
+# Set user and working directory
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
